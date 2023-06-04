@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+                                                
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <wb-module deploy-name="es.um.sisdist.backend.Service">
+                                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tests/java/tests"/>
+                                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <property name="java-output-path" value="/es.um.sisdist.backend.Service/build/classes"/>
+        <property name="context-root" value="es.um.sisdist.backend.Service"/>
+                                                                                            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </wb-module>
+                                            
+
+
+
+
+
+
+
+
+
+
+</project-modules>
