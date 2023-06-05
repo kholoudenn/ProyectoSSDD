@@ -116,6 +116,24 @@ public class MongoUserDAO implements IUserDAO
         }
     }
 
+    /**modificado por kholoud*/
+	@Override
+	public void addVisits(String id) {
+		// TODO Auto-generated method stub
+		// obtener usuario y modificar su numero de visitas en la base de datos
+		try {
+	        Document filter = new Document("_id", id);
+	        Document update = new Document("$inc", new Document("visits", 1));
+	        collection.get().updateOne(filter, update);
+	        //return result.getModifiedCount() > 0;
+	    } catch (Exception e) {
+	        // Manejo de excepciones: capturar y manejar la excepción según sea necesario
+	        //return false;
+	    }
+	}
+    
+    
+
 
     
     

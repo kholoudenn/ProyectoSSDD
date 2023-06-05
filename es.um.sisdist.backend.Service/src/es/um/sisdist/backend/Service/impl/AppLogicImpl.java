@@ -23,7 +23,7 @@ import io.grpc.ManagedChannelBuilder;
 public class AppLogicImpl
 {
     IDAOFactory daoFactory;
-    IUserDAO dao;
+    IUserDAO dao; // usuario DAO
 
     private static final Logger logger = Logger.getLogger(AppLogicImpl.class.getName());
 
@@ -59,6 +59,8 @@ public class AppLogicImpl
     {
         return instance;
     }
+    
+    /**Métodos de la lógica de la aplicación - Kholoud*/
 
     public Optional<User> getUserByEmail(String userId)
     {
@@ -71,6 +73,13 @@ public class AppLogicImpl
         return dao.getUserById(userId);
     }
 
+    /**modificado por kholoud*/
+    // regitra un usuario
+    public boolean signup(String email, String name, String password) {
+    	dao.insertUser(email);
+    	return false;
+    	
+    }
     public boolean ping(int v)
     {
     	logger.info("Issuing ping, value: " + v);
@@ -93,10 +102,16 @@ public class AppLogicImpl
         if (u.isPresent())
         {
             String hashed_pass = UserUtils.md5pass(pass);
-            if (0 == hashed_pass.compareTo(u.get().getPassword_hash()))
-                return u;
+            if (0 == hashed_pass.compareTo(u.get().getPassword_hash())) {
+                // si login correcto, incrementar numero de visitas: 
+            	dao.addVisits(u.get().getId());
+            	return u;
+
+            }
         }
 
         return Optional.empty();
     }
+    
+    
 }

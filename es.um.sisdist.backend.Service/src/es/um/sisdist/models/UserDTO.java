@@ -110,6 +110,7 @@ public class UserDTO
         this.visits = visits;
     }
 
+    
     public UserDTO(String id, String email, String password, String name, String tOKEN, int visits)
     {
         super();

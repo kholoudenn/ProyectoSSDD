@@ -111,6 +111,10 @@ public class User
     {
         this.visits = visits;
     }
+    /**modificado por kholoud*/
+    public void addVisits() {
+    	this.visits = this.visits + 1;
+    }
 
     public User(String email, String password_hash, String name, String tOKEN, int visits)
     {
